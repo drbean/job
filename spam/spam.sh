@@ -1,8 +1,8 @@
-#!/usr/pkg/bin/bash
+#!/usr/bin/bash
 
 # #!/bin/sh
 
-subject="Job application by Greg Matheson";
+subject="good electives for Greg";
 
 # ./spam.sh < addresses
 
@@ -33,7 +33,9 @@ From: Greg Matheson <drbean@freeshell.org>
 Subject: $subject
 	" -e "1i\\
 Content-Type: text/plain; charset=\"UTF-8\"
-	" < letter_bushiban | /usr/sbin/sendmail -oem -oi $addresspart;
+	" -e "1i\\
+Reply-To: drbean@freeshell.org
+	" < $HOME/job/job/elective_advice.txt | /usr/sbin/sendmail -oem -oi $addresspart;
 
 	error=$?;
 	echo -n $display $addresspart;
