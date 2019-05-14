@@ -2,7 +2,7 @@
 
 # #!/bin/sh
 
-subject="good electives for Greg";
+subject="Academic paper editing service";
 
 # ./spam.sh < addresses
 
@@ -35,7 +35,7 @@ Subject: $subject
 Content-Type: text/plain; charset=\"UTF-8\"
 	" -e "1i\\
 Reply-To: drbean@freeshell.org
-	" < $HOME/job/job/elective_advice.txt | /usr/sbin/sendmail -oem -oi $addresspart;
+	" < $HOME/edit/email/edit_offer.txt | /usr/sbin/sendmail -oem -oi $addresspart;
 
 	error=$?;
 	echo -n $display $addresspart;
