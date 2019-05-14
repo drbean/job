@@ -40,5 +40,5 @@ Reply-To: drbean@freeshell.org
 	error=$?;
 	echo -n $display $addresspart;
 	if [[ $error == 0 ]]; then echo " OK"; else echo " NOK"; fi;
-	sleep 35;
+	sleep $((35 + $RANDOM % 20));
 done
