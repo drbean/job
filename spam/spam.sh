@@ -2,7 +2,7 @@
 
 # #!/bin/sh
 
-subject="Academic paper editing service";
+subject="Greg Matheson: Elective teaching proposal (Job application)";
 
 # ./spam.sh < addresses
 
@@ -35,10 +35,10 @@ Subject: $subject
 Content-Type: text/plain; charset=\"UTF-8\"
 	" -e "1i\\
 Reply-To: drbean@freeshell.org
-	" < $HOME/edit/email/edit_offer.txt | /usr/sbin/sendmail -oem -oi $addresspart;
+	" < $HOME/job/job/2020-05_college.txt | /usr/sbin/sendmail -oem -oi $addresspart;
 
 	error=$?;
 	echo -n $display $addresspart;
-	if [[ $error == 0 ]]; then echo " OK"; else echo " NOK"; fi;
+	if [[ $error == 0 ]]; then printf ' \x1b[92mOK\x1b[39;49m'; else printf ' \x1b[91mNOK\x1b[39;49m'; fi;
 	sleep $((35 + $RANDOM % 20));
 done
