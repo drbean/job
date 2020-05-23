@@ -39,6 +39,6 @@ Reply-To: drbean@freeshell.org
 
 	error=$?;
 	echo -n $display $addresspart;
-	if [[ $error == 0 ]]; then printf ' OK'; else printf ' \x1b[91mNOK\x1b[39;49m'; fi;
+	if [[ $error == 0 ]]; then printf ' OK\n'; else printf ' \x1b[91mNOK\x1b[39;49m\n'; fi;
 	sleep $((35 + $RANDOM % 20));
 done
