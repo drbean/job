@@ -2,48 +2,43 @@
 
 ## The abstract: BEFORE and AFTER
 
--------------------------------------------------------------
- Centered   Default           Right Left
-  Header    Aligned         Aligned Aligned
------------ ------- --------------- -------------------------
-   First    row                12.0 Example of a row that
-                                    spans multiple lines.
-
-  Second    row                 5.0 Here's another one. Note
-                                    the blank line between
-                                    rows.
--------------------------------------------------------------
-
-Table: Here's the caption. It, too, may span
-multiple lines.
-
 
 --------------------------------------------------------------------------------------------------------------------
-BEFORE                                                                                                         AFTER
+BEFORE                                                     AFTER
 --------------------------------------------------------   ---------------------------------------------------------
 This study was to confirm the Q-technique instruction      This study confirms the instructional effect of the
 effect of enhancing the innovation ability of students.    Q-technique in enhancing the innovation ability of
 The focus group and quasi-experimental method were         students, with research applying focus group and
-applied. First of all, the innovation ability was          quasi-experimental methods. First, innovation ability
+applied.                                                   quasi-experimental methods.
+
+         First of all, the innovation ability was                                      First, innovation ability
 confirmed by experts to be a professional competency       was confirmed by experts to be a professional
-required by enterprises. Next, the Q-technique unit        competency required by enterprises. Next, Q-technique
+required by enterprises.                                   competency required by enterprises.
+
+                         Next, the Q-technique unit                                            Next, Q-technique
 instruction and experiment designed to verify the          instruction in the form of an experiment designed to
-instruction effect of cultivating students with the        increase students' innovativeness was performed. In the
-innovation ability. It was discovered that the             course of the experiment, it was determined that
+instruction effect of cultivating students with the        increase students' innovativeness was performed.
+innovation ability.
+
+                    It was discovered that the             In the course of the experiment, it was determined that
 innovation ability was composed of eight indices, and      innovation ability is composed of eight components, and
-the Q-technique can upgrade the students’ innovation       the Q-technique upgrades students’ innovativeness. In
-ability. In the application in practice, the               application in practice, the Q-technique can result in
+the Q-technique can upgrade the students’ innovation       the Q-technique upgrades students’ innovativeness.
+ability.
+
+         In the application in practice, the               In application in practice, the Q-technique can result in
 Q-technique can attain the integral learning in a          integral learning in a systematic manner from the first
 systematic manner from the creativity till the             creative stages till the realization of an innovative
 innovative products in technology; to suffice the          product in technology; and with this, a deficiency in
 deficiency in innovation ability literatures of the        the “process perspective” innovation instruction
-“process perspective”. In the aspect of contribution,      literature is supplemented. Its contribution is it
+“process perspective”.                                     literature is supplemented.
+
+                       In the aspect of contribution,                                  Its contribution is it
 the Q-technique can be applied to innovative               demonstrates the Q-technique can be applied in
 instructions and the changes of mental models, valuable    innovative instruction and result in mental model
 to the reform of innovation teaching.                      changes, valuable to the reform of innovation teaching.
 --------------------------------------------------------------------------------------------------------------------
 
-Table: A comparison of changes made to the Q-technique paper Abstract
+Table: A comparison of changes made to the Q-technique paper's Abstract
 
 ## The introduction: BEFORE and AFTER
 
