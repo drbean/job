@@ -21,7 +21,7 @@ subject="Greg Matheson: Academic Editing Service Introduction";
 
 while read -a addressarray;
 do
-	if [[ ! ${addressarray[0]:0:1} == '#' ]] ;
+	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
 	then
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
