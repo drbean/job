@@ -44,18 +44,24 @@ Table: A comparison of changes made to the Q-technique paper's Abstract
 
 ---------------------------------------------------------------------------------------------------------------------
 BEFORE                                                     AFTER
-------                                                     -----
+--------------------------------------------------------   ---------------------------------------------------------
 How to reduce the difference between the innovation        How to reduce the difference between the innovation
 ability requirements of enterprises and the cultivation    ability requirements of enterprises and the focus of
 curriculum shall be an important issue in employability    innovation curricula is an important issue in
-(Støren & Aamodt, 2012). Through higher education, the     employability (Støren & Aamodt, 2012). Through higher
+(Støren & Aamodt, 2012).                                   employability (Støren & Aamodt, 2012).
+
+                         Through higher education, the                                            Through higher
 difference between the work requirements and the           education, the difference between work requirements and
 competences of employers can be shortened, in order to     the competencies of employees can be alleviated,
 reduce the occurrence ratio in the difference between      reducing the frequency of a mismatch between job
 job requirements and education results (Green et al,       requirements and education results (Green et al, 2002).
-2002). The industry demand oriented professional           However, industry demand-oriented professional
+2002).
+
+       The industry demand oriented professional           However, industry demand-oriented professional
 competency shall be an important basis for the             competencies must be an important basis for curriculum
-curriculum innovation. Therefore, through a continued      innovation. Therefore, through a continued innovation
+curriculum innovation.                                     innovation.
+
+                       Therefore, through a continued      Therefore, through a continued innovation
 innovation in curriculum, and successive focusing on       in curriculum, and successive focusing on professional
 the professional competency requirements, the              competency requirements, the employability of students
 employability of the students can then be upgraded, and    can be upgraded, and the education and service
@@ -63,55 +69,41 @@ the education and service compliance of the graduated      compliance of graduat
 students be promoted (Li, Yen, & Cheng, 2008；Chang &      Yen, & Cheng, 2008；Chang & Chang, 2011).
 Chang, 2011).
 
-[cut]
 ---------------------------------------------------------------------------------------------------------------------
 
-Table: A comparison of changes made to the Q-technique paper Introduction
+Table: A comparison of changes made to the Q-technique paper's Introduction
+
+[cut]
 
 ## The Discussion: BEFORE and AFTER
 
 ---------------------------------------------------------------------------------------------------------------------
 BEFORE                                                     AFTER
-------                                                     -----
-
+--------------------------------------------------------   ---------------------------------------------------------
 Conclusions                                                Conclusions
 
 The “innovation ability” is one of the important           “Innovation ability” is one of the most important
 professional competencies required in IT industry.         professional competencies required in the IT industry.
+
 Therefore, this study adopts the “process perspective”     Therefore, this study sought to determine how it could
-of creativity to serve as its study approach. In the       be better taught, adopting the “process perspective” as
-first stage, through literature review and focus group     its approach. In the first stage, through literature
-expert consultations, such eight indices as market         review and focus group expert consultations, eight
-sensitivity, organizational integration, complexity,       indices, namely, market sensitivity, organizational
-originality, flexibility, novelty, fluency, and            integration, complexity, originality, flexibility,
-creative impulse, etc. of innovation ability are           novelty, fluency, and creative impulse, which together
-obtained. In accordance with the pre-test and post-test    allowed a precise determination of innovation ability,
-scales of the completion of development for each index,    were obtained. By means of the pre-test and post-test
-the instruction effect can be effectively verified.        scales as they stood at the completion of development,
-                                                           the instruction effect could be effectively verified
-[cut]                                                      for each index.
+of creativity to serve as its study approach.              be better taught, adopting the “process perspective” as
+                                                           its approach.
+
+                                              In the                     In the first stage, through literature
+first stage, through literature review and focus group     review and focus group expert consultations, eight
+expert consultations, such eight indices as market         indices, namely, market sensitivity, organizational
+sensitivity, organizational integration, complexity,       integration, complexity, originality, flexibility,
+originality, flexibility, novelty, fluency, and            novelty, fluency, and creative impulse, which together
+creative impulse, etc. of innovation ability are           allowed a precise determination of innovation ability,
+obtained.                                                  were obtained.
+
+          In accordance with the pre-test and post-test                   By means of the pre-test and post-test
+scales of the completion of development for each index,    scales as they stood at the completion of development,
+the instruction effect can be effectively verified.        the instruction effect could be effectively verified
+                                                           for each index.
 
 ---------------------------------------------------------------------------------------------------------------------
 
-Table: A comparison of changes made to the Q-technique paper Discussion
-
-## Discussion: AFTER
-
-Conclusions
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Table: A comparison of changes made to the Q-technique paper's Discussion
 
 [cut]
