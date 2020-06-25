@@ -37,7 +37,7 @@ Subject: $subject
 Content-Type: text/plain; charset=\"UTF-8\"
 		" -e "1i\\
 Reply-To: drbean@freeshell.org
-		" < $HOME/edit/email/edit_offer.txt | /usr/sbin/sendmail -oem -oi $addresspart;
+		" < $HOME/edit/email/ets_inquiry.txt | /usr/sbin/sendmail -oem -oi $addresspart;
 
 		error=$?;
 		echo -n $display $addresspart;
