@@ -21,7 +21,7 @@ GetOptions(
 use Net::FTP;
 my $ftp = Net::FTP->new('web.nuu.edu.tw') or
 			die "web.nuu.edu.tw? $@";
-$ftp->login('greg', '6y6t6y6t') or die "web.nuu.edu.tw login? $@";
+$ftp->login('greg', '') or die "web.nuu.edu.tw login? $@";
 $ftp->cwd("public_html/$genre/$area") or die
 	"web.nuu.edu.tw/~greg/public_html? $@";
 $ftp->binary;
