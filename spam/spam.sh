@@ -2,7 +2,7 @@
 
 # #!/bin/sh
 
-subject="Greg Matheson: Academic Editing Service Introduction";
+subject="Greg Matheson: Job application";
 
 # ./spam.sh < addresses
 
@@ -37,7 +37,7 @@ Subject: $subject
 Content-Type: text/plain; charset=\"UTF-8\"
 		" -e "1i\\
 Reply-To: drbean@freeshell.org
-		" < $HOME/edit/email/ets_inquiry.txt | /usr/sbin/sendmail -oem -oi $addresspart;
+		" < $HOME/job/2020-12_college.txt | /usr/sbin/sendmail -oem -oi $addresspart;
 
 		error=$?;
 		echo -n $display $addresspart;
