@@ -19,7 +19,7 @@ subject="NUU TOEIC Speaking course online";
 #		addressarray[$((n++))]=$part;
 #	done;
 
-n=1234
+n=2341
 while read -a addressarray;
 do
 	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
