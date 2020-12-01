@@ -27,25 +27,6 @@ See my thoughts on the work of the editor at http://drbean.sdf.org/sentence_and_
 See my work on a paper about an experimental intervention in education, http://drbean.sdf.org/q-technique.html
 See a cover letter I sent to Wallace Editing Services, http://www.editing.tw, in application for a freelance editing position at http://drbean.sdf.org/wallace_cover_letter.txt
 
-Let me share two excellent writing sites:
-
-1. GMU's writing guides, developed for college students, have good advice about the process of writing.
-
-See the comments on the academic paper's Introduction, Method, Results and Discussion sections:
-
-https://writingcenter.gmu.edu/guides/imrad-reports-introductions
-https://writingcenter.gmu.edu/guides/writing-an-imrad-report
-https://writingcenter.gmu.edu/guides/imrad-reports-conclusions
-
-2. Academic Phrasebank gives you the words to say what you are trying to do at certain points in your paper.
-
-For example, hedges, as explained by https://writingcenter.gmu.edu/guides/hedges-softening-claims-in-academic-writing
-
-The Academic Phrasebank suggests when you want to be cautious about interpreting results, http://www.phrasebank.manchester.ac.uk/using-cautious-language/, you can say:
-
-	These data must be interpreted with caution because …
-	These results therefore need to be interpreted with caution.
-
 People in Taiwan have been very generous to me, I have for many years benefited from free software and I always appreciate vendors who offer good service at low prices, so I want to return the favor by keeping to the rock-bottom recommended 科技部 rate of 0.5元 per word.
 
 Thanks for reading this far. I look forward to hearing from you.
