@@ -2,7 +2,7 @@
 
 # #!/bin/sh
 
-subject="Greg Matheson: Job application";
+subject="NUU TOEIC Speaking course online";
 
 # ./spam.sh < addresses
 
@@ -19,10 +19,15 @@ subject="Greg Matheson: Job application";
 #		addressarray[$((n++))]=$part;
 #	done;
 
+n=1234
 while read -a addressarray;
 do
 	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
 	then
+		n=$((++n))
+		file=$HOME/job/sending.txt
+		cat $HOME/job/toeic.txt > $file
+		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
 		unset addressarray[$last];
@@ -30,14 +35,14 @@ do
 		sed -e "1i\\
 To: $display $addresspart
 		" -e "1i\\
-From: Greg Matheson <drbean@freeshell.org>
+From: Greg Matheson <drbean+$n@freeshell.org>
 		" -e "1i\\
 Subject: $subject
 		" -e "1i\\
 Content-Type: text/plain; charset=\"UTF-8\"
 		" -e "1i\\
-Reply-To: drbean@freeshell.org
-		" < $HOME/job/2020-12_college.txt | /usr/sbin/sendmail -oem -oi $addresspart;
+Reply-To: drbean+$n@freeshell.org
+		" < $file | /usr/sbin/sendmail -oem -oi $addresspart;
 
 		error=$?;
 		echo -n $display $addresspart;
