@@ -2,7 +2,7 @@
 
 # #!/bin/sh
 
-subject="NUU TOEIC Speaking course online";
+subject="Academic paper editing service";
 
 # ./spam.sh < addresses
 
