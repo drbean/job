@@ -26,7 +26,7 @@ do
 	then
 		n=$((++n))
 		file=$HOME/job/sending.txt
-		cat $HOME/job/toeic.txt > $file
+		cat $HOME/job/edit_offer.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
