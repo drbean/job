@@ -19,7 +19,7 @@ subject="Academic paper editing service";
 #		addressarray[$((n++))]=$part;
 #	done;
 
-n=2341
+n=3412
 while read -a addressarray;
 do
 	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
@@ -45,7 +45,7 @@ Reply-To: drbean+$n@freeshell.org
 		" < $file | /usr/sbin/sendmail -oem -oi $addresspart;
 
 		error=$?;
-		echo -n $display $addresspart;
+		echo -n $n: $display $addresspart;
 		if [[ $error == 0 ]]; then printf ' OK\n'; else printf ' \x1b[91mNOK\x1b[39;49m\n'; fi;
 		sleep $((35 + $RANDOM % 20));
 	fi;
