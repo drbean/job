@@ -19,12 +19,14 @@ subject="Academic paper editing service";
 #		addressarray[$((n++))]=$part;
 #	done;
 
-n=3412
+# Remember to export 'next' var beforehand
+
 while read -a addressarray;
 do
 	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
 	then
-		n=$((++n))
+		n=$((++next))
+		export next=$n
 		file=$HOME/job/sending.txt
 		cat $HOME/job/edit_offer.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
