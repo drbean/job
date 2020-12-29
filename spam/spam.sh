@@ -19,6 +19,8 @@ subject="Academic paper editing service";
 #		addressarray[$((n++))]=$part;
 #	done;
 
+date
+
 while read -a addressarray;
 do
 	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
@@ -51,3 +53,5 @@ Reply-To: drbean+$n@freeshell.org
 		sleep $((35 + $RANDOM % 20));
 	fi;
 done
+
+date
