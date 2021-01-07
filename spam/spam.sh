@@ -28,6 +28,7 @@ do
 		read next < next
 		n=$((++next))
 		echo $n > next
+		ext=$(sed -n "${n}p" my_word | tr -d \\n)
 		file=$HOME/job/sending.txt
 		cat $HOME/job/edit_offer.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
@@ -38,7 +39,7 @@ do
 		sed -e "1i\\
 To: $display $addresspart
 		" -e "1i\\
-From: Greg Matheson <drbean+$n@freeshell.org>
+From: Greg Matheson <drbean+$ext@freeshell.org>
 		" -e "1i\\
 Subject: $subject
 		" -e "1i\\
