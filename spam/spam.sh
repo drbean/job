@@ -56,3 +56,5 @@ Reply-To: drbean+$n@freeshell.org
 done
 
 date
+
+echo -e '\a'
