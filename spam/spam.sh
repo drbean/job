@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/pkg/bin/bash
 
 # #!/bin/sh
 
