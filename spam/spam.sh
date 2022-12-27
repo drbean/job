@@ -49,7 +49,7 @@ Reply-To: drbean+$n@freeshell.org
 		" < $file | /usr/sbin/sendmail -oem -oi $addresspart;
 
 		error=$?;
-		echo -n $n: $display $addresspart;
+		echo -n $n: $display $addresspart | tee last_address;
 		if [[ $error == 0 ]]; then printf ' OK\n'; else printf ' \x1b[91mNOK\x1b[39;49m\n'; fi;
 		sleep $((35 + $RANDOM % 20));
 	fi;
