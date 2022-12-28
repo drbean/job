@@ -8,6 +8,6 @@ for i in ${x[@]} ; do
 	echo north: $i of $x
 	$HOME/job/spam.sh < $HOME/job/north.$i
 	last=$(< next)
-	echo $(date) $first~$last north.$i >> $HOME/job/done
+	echo $(date) $((++first))~$last north.$i >> $HOME/job/done
 done
 
