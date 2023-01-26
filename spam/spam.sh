@@ -28,7 +28,7 @@ do
 		read next < next
 		n=$((++next))
 		echo $n > next
-		ext=$(sed -n "${n}p" my_word | tr -d \\n)
+		ext=$(sed -n "${n}p" my_word.txt | tr -d \\n)
 		file=$HOME/job/sending.txt
 		cat $HOME/job/edit_offer.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
