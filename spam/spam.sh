@@ -25,10 +25,10 @@ while read -a addressarray;
 do
 	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
 	then
-		read next < next
+		read next < ./next
 		n=$((++next))
-		echo $n > next
-		ext=$(sed -n "${n}p" my_word.txt | tr -d \\n)
+		echo $n > ./next
+		ext=$(sed -n "${word}p" /usr/share/dict/words | tr -d \\n)
 		file=$HOME/job/sending.txt
 		cat $HOME/job/edit_offer.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
