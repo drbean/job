@@ -20,7 +20,6 @@ subject="Academic paper editing service";
 #	done;
 
 date
-read start < next
 
 while read -a addressarray;
 do
@@ -29,8 +28,7 @@ do
 		read next < next
 		n=$((++next))
 		echo $n > next
-		word=$((n - start))
-		ext=$(sed -n "${word}p" my_word.txt | tr -d \\n)
+		ext=$(sed -n "${n}p" my_word.txt | tr -d \\n)
 		file=$HOME/job/sending.txt
 		cat $HOME/job/edit_offer.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
