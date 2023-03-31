@@ -10,6 +10,7 @@ for i in ${x[@]} ; do
 	echo $area: $i of $x
 	$HOME/job/spam.sh < $HOME/job/$area/$i
 	last=$(< $HOME/job/$area/next)
-	echo $(date) $((++first))~$last $area.$i >> $HOME/job/$area/done
+	echo $(date) $((++first))~$last $area.$i |
+		tee -a $HOME/job/$area/done
 done
 

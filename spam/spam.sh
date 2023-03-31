@@ -55,6 +55,4 @@ Reply-To: drbean+$n@freeshell.org
 	fi;
 done
 
-date
-
 echo -e '\a'
