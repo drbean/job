@@ -29,8 +29,8 @@ do
 		n=$((++next))
 		echo $n > ./next
 		ext=$(sed -n "${n}p" /usr/share/dict/words | tr -d \\n)
-		file=$HOME/job/sending.txt
-		cat $HOME/job/edit_offer.txt > $file
+		file=./sending.txt
+		cat ./edit_offer.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
