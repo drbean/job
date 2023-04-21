@@ -3,6 +3,10 @@
 # #!/bin/sh
 
 subject="Academic paper editing service";
+body="edit_offer.txt"
+threshold=35
+ranger=20
+
 
 # ./spam.sh < addresses
 
@@ -30,7 +34,7 @@ do
 		echo $n > ./next
 		ext=$(sed -n "${n}p" /usr/share/dict/words | tr -d \\n)
 		file=./sending.txt
-		cat ./edit_offer.txt > $file
+		cat ./$body.txt > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
@@ -51,7 +55,7 @@ Reply-To: drbean+$n@freeshell.org
 		error=$?;
 		echo -n $n: $display $addresspart | tee last_address;
 		if [[ $error == 0 ]]; then printf ' OK\n'; else printf ' \x1b[91mNOK\x1b[39;49m\n'; fi;
-		sleep $((35 + $RANDOM % 20));
+		sleep $(($threshold + $RANDOM % $ranger));
 	fi;
 done
 
