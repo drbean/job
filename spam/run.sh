@@ -8,7 +8,7 @@ for i in ${x[@]} ; do
 	declare -i first last
 	first=$(< $HOME/job/$area/next)
 	echo $area: $i of $x
-	$HOME/job/spam.sh < $HOME/job/$area/$i
+	$HOME/job/$area/spam.sh < $HOME/job/$area/$i
 	last=$(< $HOME/job/$area/next)
 	echo $(date) $((++first))~$last $area.$i |
 		tee -a $HOME/job/$area/done
