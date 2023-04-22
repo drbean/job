@@ -34,7 +34,7 @@ do
 		echo $n > ./next
 		ext=$(sed -n "${n}p" /usr/share/dict/words | tr -d \\n)
 		file=./sending.txt
-		cat ./$body.txt > $file
+		cat ./$body > $file
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
