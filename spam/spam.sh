@@ -2,9 +2,9 @@
 
 # #!/bin/sh
 
-subject="Academic paper editing service";
+subject="Heads-up: My flier in your mail folder";
 body="respondent_notification.txt"
-threshold=10
+threshold=5
 ranger=5
 
 
