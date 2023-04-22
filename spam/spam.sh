@@ -3,9 +3,9 @@
 # #!/bin/sh
 
 subject="Academic paper editing service";
-body="respondent_notification.txt"
-threshold=10
-ranger=5
+body="edit_offer.txt"
+threshold=35
+ranger=20
 
 
 # ./spam.sh < addresses
