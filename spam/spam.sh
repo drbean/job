@@ -4,8 +4,8 @@
 
 subject="Academic paper editing service";
 body="edit_offer.txt"
-threshold=35
-ranger=20
+threshold=34
+ranger=21
 
 
 # ./spam.sh < addresses
