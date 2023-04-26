@@ -6,11 +6,13 @@ echo >> $HOME/job/$area/done
 if [[ $# -eq 2 ]]; then
 	x=$(eval echo {0${2}0..0${2}9})
 elif [[ $# -eq 3 ]]; then
-	if [[ !($2 -le $3) ]]; then
-		echo "$@ backwards!" >&2
+	from=$2
+	to=$3
+	if [[ $(( 10#$from )) -gt $(( 10#$to )) ]]; then
+		echo "{$from..$to} backwards!" >&2
 		exit
 	fi
-	x=$(eval echo {$2..$3})
+	x=$(eval echo {$from..$to})
 else
 	echo "$@: Too many/few args?" >&2
 	exit
