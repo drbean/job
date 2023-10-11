@@ -2,10 +2,10 @@
 
 # #!/bin/sh
 
-subject="Academic paper editing service";
-body="edit_offer.txt"
-threshold=35
-ranger=20
+subject="Heads-up: My flier in your mail folder";
+body="respondent_notification.txt"
+threshold=5
+ranger=5
 
 
 # ./spam.sh < addresses
