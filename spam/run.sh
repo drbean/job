@@ -1,28 +1,30 @@
 #!/usr/pkg/bin/bash
 
-area=$1
+AREA=$1
+declare -a BLOCK
 
-echo >> $HOME/job/$area/done
+echo >> $HOME/job/$AREA/done
 if [[ $# -eq 2 ]]; then
-	x=$(eval echo {0${2}0..0${2}9})
+	BATCH=$2
+	BLOCK=( $( eval echo {${BATCH}0..${BATCH}9} ) )
 elif [[ $# -eq 3 ]]; then
 	from=$2
 	to=$3
-	if [[ $(( 10#$from )) -gt $(( 10#$to )) ]]; then
+	if [[ $(( $from )) -gt $(( $to )) ]]; then
 		echo "{$from..$to} backwards!" >&2
 		exit
 	fi
-	x=$(eval echo {$from..$to})
+	BLOCK=( $( eval echo {$from..$to} ) )
 else
 	echo "$@: Too many/few args?" >&2
-	exit
+	exit 1
 fi
-for i in ${x[@]} ; do
+for i in ${BLOCK[@]} ; do
 	declare -i first last
-	first=$(< $HOME/job/$area/next)
-	echo $area: $i of $x
-	$HOME/job/$area/spam.sh < $HOME/job/$area/$i
-	last=$(< $HOME/job/$area/next)
-	echo $(date) $((++first))~$last $area.$i |
-		tee -a $HOME/job/$area/done
+	first=$(< $HOME/job/$AREA/next)
+	echo "$AREA: $i of ${BLOCK[0]} ~ ${BLOCK[-1]}"
+	$HOME/job/$AREA/spam.sh < $HOME/job/$AREA/$i
+	last=$(< $HOME/job/$AREA/next)
+	echo $(date) $((++first))~$last $AREA.$i |
+		tee -a $HOME/job/$AREA/done
 done
