@@ -1,9 +1,11 @@
 #!/usr/pkg/bin/bash
 
-AREA=$1
+LAND_AREA=$1
+LAND=${LAND_AREA:0:2}
+AREA=${LAND_AREA#$LAND?}
 declare -a BLOCK
 
-echo >> $HOME/job/$AREA/done
+echo >> $HOME/job/$LAND/$AREA/done
 if [[ $# -eq 2 ]]; then
 	BATCH=$2
 	BLOCK=( $( eval echo {${BATCH}0..${BATCH}9} ) )
@@ -21,10 +23,10 @@ else
 fi
 for i in ${BLOCK[@]} ; do
 	declare -i first last
-	first=$(< $HOME/job/$AREA/next)
-	echo "$AREA: $i of ${BLOCK[0]} ~ ${BLOCK[-1]}"
-	$HOME/job/$AREA/spam.sh < $HOME/job/$AREA/$i
-	last=$(< $HOME/job/$AREA/next)
-	echo $(date) $((++first))~$last $AREA.$i |
-		tee -a $HOME/job/$AREA/done
+	first=$(< $HOME/job/$LAND/$AREA/next)
+	echo "$LAND/$AREA: $i of ${BLOCK[0]} ~ ${BLOCK[-1]}"
+	$HOME/job/$LAND/$AREA/spam.sh < $HOME/job/$LAND/$AREA/$i
+	last=$(< $HOME/job/$LAND/$AREA/next)
+	echo $(date) $((++first))~$last $LAND AREA.$i |
+		tee -a $HOME/job/$LAND/$AREA/done
 done
