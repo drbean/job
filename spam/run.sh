@@ -27,6 +27,6 @@ for i in ${BLOCK[@]} ; do
 	echo "$LAND/$AREA: $i of ${BLOCK[0]} ~ ${BLOCK[-1]}"
 	$HOME/job/$LAND/$AREA/spam.sh < $HOME/job/$LAND/$AREA/$i
 	last=$(< $HOME/job/$LAND/$AREA/next)
-	echo $(date) $((++first))~$last $LAND AREA.$i |
+	echo $(date) $((++first))~$last $LAND $AREA $i |
 		tee -a $HOME/job/$LAND/$AREA/done
 done
