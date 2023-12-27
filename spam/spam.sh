@@ -60,6 +60,12 @@ do
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
+		if [[ $addresspart == *@ntu.edu.tw ]] ; then
+			echo -n $n: $display $addresspart |
+				tee last_address unsent.ntu.txt
+			printf ' \x1b[91mUNSENT\x1b[39;49m\n'
+			continue
+		fi 
 		unset addressarray[$last];
 		display=${addressarray[*]};
 		sed -e "1i\\
