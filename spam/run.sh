@@ -25,6 +25,10 @@ for i in ${BLOCK[@]} ; do
 	declare -i first last
 	first=$(< $HOME/job/$LAND/$AREA/next)
 	echo "$LAND/$AREA: $i of ${BLOCK[0]} ~ ${BLOCK[-1]}"
+	if ! [[ -f $HOME/job/$LAND/$AREA/$i ]] ; then
+		echo "No $i block. Continuing with block $((i+1))."
+		continue
+	fi
 	$HOME/job/$LAND/$AREA/spam.sh < $HOME/job/$LAND/$AREA/$i
 	last=$(< $HOME/job/$LAND/$AREA/next)
 	echo $(date) $((++first))~$last $LAND $AREA $i |
