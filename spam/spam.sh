@@ -62,7 +62,8 @@ do
 		addresspart=${addressarray[$((--last))]};
 		if [[ $addresspart == *@hotmail.com ]] ; then
 			echo -n $n: $display $addresspart |
-				tee last_address unsent.ntu.txt
+				tee last_address | tee -a unsent.hotmail.txt
+			echo > unsent.hotmail.txt
 			printf ' \x1b[91mUNSENT\x1b[39;49m\n'
 			continue
 		fi 
