@@ -60,7 +60,7 @@ do
 		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
-		if [[ $addresspart == *@ntu.edu.tw ]] ; then
+		if [[ $addresspart == *@hotmail.com ]] ; then
 			echo -n $n: $display $addresspart |
 				tee last_address unsent.ntu.txt
 			printf ' \x1b[91mUNSENT\x1b[39;49m\n'
