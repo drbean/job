@@ -57,7 +57,8 @@ do
 		ext=$(sed -n "${n}p" /usr/share/dict/words | tr -d \\n)
 		file=./sending.txt
 		cat ${instance[body]} > $file
-		echo "$(fortune $HOME/.mutt/fortunes)" >> $file
+		echo "$(fortune $HOME/.mutt/fortunes | ~/.mutt/signature.sh)" \
+			>> $file
 		last=${#addressarray[@]};
 		addresspart=${addressarray[$((--last))]};
 		unset addressarray[$last];
