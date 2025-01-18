@@ -3,7 +3,7 @@
 subject="Academic paper editing service";
 file="$HOME/job/sending.txt";
 
-# ./spam.sh < addresses
+# ./sendmail.sh < addresses
 
 while read -a addressarray;
 do

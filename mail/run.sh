@@ -29,7 +29,7 @@ for i in ${BLOCK[@]} ; do
 		echo "No $i block. Continuing with block $((i+1))."
 		continue
 	fi
-	$HOME/job/$LAND/$AREA/spam.sh < $HOME/job/$LAND/$AREA/$i
+	$HOME/job/$LAND/$AREA/sendmail.sh < $HOME/job/$LAND/$AREA/$i
 	last=$(< $HOME/job/$LAND/$AREA/next)
 	echo $(date) $((++first))~$last $LAND $AREA $i |
 		tee -a $HOME/job/$LAND/$AREA/done
