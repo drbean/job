@@ -14,19 +14,19 @@ for c in ${component[*]} ; do
 	if [[ -v $c ]] ; then
 		if [[ $c == "strength" ]] ; then
 			declare -n yq_nameref=$c
-			declare -a category
-			declare -i i=0
-			while read p ; do
-				category[$i]=$p
-				echo ${category[$i]}
-				i+=1
-			done <<<$(yq ".strength | keys.[]" $MEAT)
-			for s in ${category[*]} ; do
-				n=$(yq ".$c.$s | length" $MEAT)
-				r=$(( $RANDOM % $n ))
-				echo $s: $r
-				script_nameref=$(yq ".$c.$s.$r" $MEAT)
-			done
+			# declare -a category
+			# declare -i i=0
+			# while read p ; do
+			# 	category[$i]=$p
+			# 	echo ${category[$i]}
+			# 	i+=1
+			# done <<<$(yq ".strength | keys.[]" $MEAT)
+			declare -i n=$(yq ".strength | keys | length" $MEAT)
+			index=$(( $RANDOM % $n ))
+			echo index: $index, yq_nameref: $yq_nameref
+			n=$(yq ".$yq_nameref.language | length" $MEAT)
+			r=$(( $RANDOM % $n ))
+			script_nameref=$(yq ".$c.$s.[$index].$r" $MEAT)
 		fi
 	else 
 		n=$(yq ".$c | length" $MEAT)
