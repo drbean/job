@@ -10,21 +10,6 @@ strength=(language care understanding experience)
 point=(roman alpha num) 
 
 for c in ${component[*]} ; do
-	N[$c]=$(yq ".$c | length" $MEAT)
-	echo .$c length: ${N[$c]}
-done
-
-for s in ${strength[*]} ; do
-	N[$s]=$(yq ".strength.$s | length" $MEAT) 
-	echo .strength.$s length: ${N[$s]}
-done
-
-for p in ${component[*]} ${strength[*]} ; do
-	PICK[$p]=$(( $RANDOM % ${N[$p]} ))
-	echo $p pick: ${PICK[$p]} / ${N[$p]}
-done
-
-for c in ${component[*]} ; do
 	declare -n script_nameref=$c
 	if [[ -v $c ]] ; then
 		if [[ $c == "strength" ]] ; then
