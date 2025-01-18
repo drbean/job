@@ -10,7 +10,7 @@ ranger=20
 declare -a subject_file body_file
 declare -A count instance
 
-# ./spam.sh < addresses
+# ./sendmail.sh < addresses
 
 for i in subject body ; do
     declare -i n=0 count[$i]=0
