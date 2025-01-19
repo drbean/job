@@ -13,7 +13,7 @@ for c in ${component[*]} ; do
 	declare -n script_nameref=$c
 	if [[ -v $c ]] ; then
 		if [[ $c == "strength" ]] ; then
-			declare -n yq_nameref=$c
+			declare -n strength_nameref=$c
 			# declare -a category
 			# declare -i i=0
 			# while read p ; do
@@ -23,12 +23,12 @@ for c in ${component[*]} ; do
 			# done <<<$(yq ".strength | keys.[]" $MEAT)
 			key_n=$(yq ".strength | keys | length" $MEAT)
 			key_index=$(( $RANDOM % $key_n ))
-			yq_nameref=${yq_nameref[$key_index]}
-			echo key index: $key_index, yq_nameref: $yq_nameref
-			array_n=$(yq ".strength.$yq_nameref | length" $MEAT)
+			script_nameref=${script_nameref[$key_index]}
+			echo key index: $key_index, script_nameref: $script_nameref
+			array_n=$(yq ".strength.$script_nameref | length" $MEAT)
 			array_index=$(( $RANDOM % $array_n ))
-			script_nameref=$(yq ".strength.$yq_nameref.[$array_index]" $MEAT)
-			echo array index: $array_index, script_nameref: $script_nameref
+			strength_nameref=$(yq ".strength.$strength_nameref.[$array_index]" $MEAT)
+			echo array index: $array_index, strength_nameref: $strength_nameref
 		fi
 	else 
 		n=$(yq ".$c | length" $MEAT)
