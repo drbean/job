@@ -14,13 +14,6 @@ for c in ${component[*]} ; do
 	if [[ -v $c ]] ; then
 		if [[ $c == "strength" ]] ; then
 			declare -n strength_nameref=$c
-			# declare -a category
-			# declare -i i=0
-			# while read p ; do
-			# 	category[$i]=$p
-			# 	echo ${category[$i]}
-			# 	i+=1
-			# done <<<$(yq ".strength | keys.[]" $MEAT)
 			key_n=$(yq ".strength | keys | length" $MEAT)
 			key_index=$(( $RANDOM % $key_n ))
 			script_nameref=${script_nameref[$key_index]}
