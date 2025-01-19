@@ -24,9 +24,9 @@ for c in ${component[*]} ; do
 			declare -i n=$(yq ".strength | keys | length" $MEAT)
 			index=$(( $RANDOM % $n ))
 			echo index: $index, yq_nameref: $yq_nameref
-			n=$(yq ".$yq_nameref.language | length" $MEAT)
+			n=$(yq ".strength.$yq_nameref | length" $MEAT)
 			r=$(( $RANDOM % $n ))
-			script_nameref=$(yq ".$c.$s.[$index].$r" $MEAT)
+			script_nameref=$(yq ".strength.$yq_nameref.[$r]" $MEAT)
 		fi
 	else 
 		n=$(yq ".$c | length" $MEAT)
