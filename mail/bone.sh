@@ -44,5 +44,5 @@ $intro.
 
 $promotion:
 
-$(yq ".point.roman.[0] + .separator.[0]" $MEAT) $strength
+$(yq ".point.roman.[0]" $MEAT)$separator $strength
 OFFER
