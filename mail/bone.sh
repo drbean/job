@@ -2,7 +2,7 @@
 
 #!/usr/pkg/bin/bash
 
-MEAT=$HOME/edit/email/edit_offer/skeleton.yaml
+MEAT=$HOME/edit/email/edit_offer/meat.yaml
 declare -A N PICK language care understanding experience roman alpha num
 
 component=(greeting intro promotion strength point separator weakness pitch toeflic outro)
@@ -21,12 +21,14 @@ for c in ${component[*]} ; do
 			# 	echo ${category[$i]}
 			# 	i+=1
 			# done <<<$(yq ".strength | keys.[]" $MEAT)
-			declare -i n=$(yq ".strength | keys | length" $MEAT)
-			index=$(( $RANDOM % $n ))
-			echo index: $index, yq_nameref: $yq_nameref
-			n=$(yq ".strength.$yq_nameref | length" $MEAT)
-			r=$(( $RANDOM % $n ))
-			script_nameref=$(yq ".strength.$yq_nameref.[$r]" $MEAT)
+			key_n=$(yq ".strength | keys | length" $MEAT)
+			key_index=$(( $RANDOM % $key_n ))
+			yq_nameref=${yq_nameref[$key_index]}
+			echo key index: $key_index, yq_nameref: $yq_nameref
+			array_n=$(yq ".strength.$yq_nameref | length" $MEAT)
+			array_index=$(( $RANDOM % $array_n ))
+			script_nameref=$(yq ".strength.$yq_nameref.[$array_index]" $MEAT)
+			echo array index: $array_index, script_nameref: $script_nameref
 		fi
 	else 
 		n=$(yq ".$c | length" $MEAT)
