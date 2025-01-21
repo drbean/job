@@ -64,11 +64,11 @@ $point2$separator $strength2,
 $point3$separator $strength3,
 $point4$separator $strength4.
 
-A weakness is: $weakness.
+A weakness: $weakness.
 
-$pitch
+$pitch.
 
-$toeflic
+$toeflic.
 
 $outro!
 OFFER
