@@ -32,19 +32,16 @@ for c in ${component[*]} ; do
 			done
 			# echo strength1: $strength1, strength2: $strength2, strength3: $strength3, strength4: $strength4
 		elif [[ $c == "point" ]] ; then
-			# for i in {0..3} ; do
-			# 	declare -n point${i}_nameref=$point$i
-			# done
 			key_n=$(yq ".point | keys | length" $MEAT)
 			key_index=$(( $RANDOM % $key_n ))
 			script_nameref=${script_nameref[$key_index]}
 			# echo key index: $key_index, script_nameref: $script_nameref
 			declare -a point
 			readarray -t point <<<$(yq ".point.$script_nameref | .[]" $MEAT)
-			point1=${point[0]}
-			point2=${point[1]}
-			point3=${point[2]}
-			point4=${point[3]}
+			for i in {0..3} ; do
+				declare -n point_nameref=point$((i+1))
+				point_nameref=${point[i]}
+			done
 			# echo point1: $point1, point2: $point2, point3: $point3, point4: $point4
 			# echo point_array: ${point[@]}
 		fi
@@ -65,13 +62,13 @@ $promotion:
 $point1$separator $strength1,
 $point2$separator $strength2,
 $point3$separator $strength3,
-$point4$separator $strength4
+$point4$separator $strength4.
 
-A weakness is: $weakness
+A weakness is: $weakness.
 
 $pitch
 
 $toeflic
 
-$outro
+$outro!
 OFFER
