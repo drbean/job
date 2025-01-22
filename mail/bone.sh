@@ -1,9 +1,7 @@
 
-
 #!/usr/pkg/bin/bash
 
 MEAT=$HOME/edit/email/edit_offer/meat.yaml
-declare -A N PICK language care understanding experience roman alpha num
 
 component=(greeting intro promotion strength point separator weakness pitch toeflic outro)
 strength=(language care understanding experience) 
