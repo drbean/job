@@ -12,15 +12,10 @@ declare -A count instance
 
 # ./sendmail.sh < addresses
 
-for i in subject body ; do
-    declare -i n=0 count[$i]=0
-    for j in $i/* ; do 
-        (( ++count[$i] ))
-        if [[ $i == subject ]] ; then
-            subject_file[$((n++))]=$j
-        else body_file[$((n++))]=$j
-        fi
-    done
+declare -i n=0 count[subject]=0
+for f in ./subject/* ; do 
+	(( ++count[subject] ))
+	subject_file[$((n++))]=$f
 done
 
 #for address in \
@@ -43,20 +38,16 @@ do
 	if [[ ! ( ${addressarray[0]:0:1} == '#' || ${#addressarray[*]} -eq 0 ) ]] ;
 	then
 
-        for c in subject body ; do
-            i=$(( $RANDOM % ${count[$c]} ))
-            if [[ $c == subject ]] ; then
-                instance[$c]=${subject_file[$i]}
-            else instance[$c]=${body_file[$i]}
-            fi
-        done
+		i=$(( $RANDOM % ${count[subject]} ))
+		instance[subject]=${subject_file[$i]}
+		instance[body]=$(./bone.sh)
 
 		read next < ./next
 		n=$((++next))
 		echo $n > ./next
 		ext=$(sed -n "${n}p" /usr/share/dict/words | tr -d \\n)
 		file=./sending.txt
-		cat ${instance[body]} > $file
+		echo "${instance[body]}" > $file
 		echo "$(fortune $HOME/.mutt/fortunes | ~/.mutt/signature.sh)" \
 			>> $file
 		last=${#addressarray[@]};
