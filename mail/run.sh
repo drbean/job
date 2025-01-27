@@ -21,6 +21,8 @@ else
 	echo "$@: Too many/few args?" >&2
 	exit 1
 fi
+
+echo "Block ${BLOCK[0]}: $(date)">> $HOME/job/$LAND/$AREA/done
 for i in ${BLOCK[@]} ; do
 	declare -i first last
 	first=$(< $HOME/job/$LAND/$AREA/next)
