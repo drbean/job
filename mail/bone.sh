@@ -1,7 +1,7 @@
 
 #!/usr/pkg/bin/bash
 
-MEAT=$HOME/edit/email/edit_offer/meat.yaml
+MEAT=./meat.yaml
 
 component=(greeting intro promotion strength point separator weakness pitch toeflic outro)
 strength=(language care understanding experience) 
@@ -13,29 +13,29 @@ for c in ${component[*]} ; do
 		if [[ $c == "strength" ]] ; then
 			declare -n strength_nameref=$c
 			declare -a order
-			readarray -t order <<<$(yq ".strength | keys | shuffle | .[]" $MEAT)
+			readarray -t order <<<$(../../yq ".strength | keys | shuffle | .[]" $MEAT)
 			# echo order array: ${order[@]}
 			declare -a strength
 			for i in ${!order[@]} ; do
 				# echo order: $i
 				key=${order[$i]}
-				key_n=$(yq ".strength.$key | length" $MEAT)
+				key_n=$(../../yq ".strength.$key | length" $MEAT)
 				key_index=$(( $RANDOM % $key_n ))
 				strength_nameref=$key
-				array_n=$(yq ".strength.$key | length" $MEAT)
+				array_n=$(../../yq ".strength.$key | length" $MEAT)
 				array_index=$(( $RANDOM % $array_n ))
-				strength_nameref=$(yq ".strength.$strength_nameref.[$array_index]" $MEAT)
+				strength_nameref=$(../../yq ".strength.$strength_nameref.[$array_index]" $MEAT)
 				# echo array index: $array_index, strength_nameref: $strength_nameref
 				declare -n order_nameref=strength$((i+=1)); order_nameref=$strength_nameref
 			done
 			# echo strength1: $strength1, strength2: $strength2, strength3: $strength3, strength4: $strength4
 		elif [[ $c == "point" ]] ; then
-			key_n=$(yq ".point | keys | length" $MEAT)
+			key_n=$(../../yq ".point | keys | length" $MEAT)
 			key_index=$(( $RANDOM % $key_n ))
 			script_nameref=${script_nameref[$key_index]}
 			# echo key index: $key_index, script_nameref: $script_nameref
 			declare -a point
-			readarray -t point <<<$(yq ".point.$script_nameref | .[]" $MEAT)
+			readarray -t point <<<$(../../yq ".point.$script_nameref | .[]" $MEAT)
 			for i in {0..3} ; do
 				declare -n point_nameref=point$((i+1))
 				point_nameref=${point[i]}
@@ -44,9 +44,9 @@ for c in ${component[*]} ; do
 			# echo point_array: ${point[@]}
 		fi
 	else 
-		n=$(yq ".$c | length" $MEAT)
+		n=$(../../yq ".$c | length" $MEAT)
 		r=$(( $RANDOM % $n ))
-		script_nameref=$(yq ".$c.[$r]" $MEAT)
+		script_nameref=$(../../yq ".$c.[$r]" $MEAT)
 	fi
 done
 
