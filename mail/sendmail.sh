@@ -4,7 +4,7 @@
 
 # subject="Academic paper editing service";
 # body="edit_offer.txt"
-threshold=34
+threshold=31
 ranger=20
 
 declare -a subject_file body_file
@@ -72,5 +72,3 @@ Reply-To: drbean+$n@freeshell.org
 		sleep $(($threshold + $RANDOM % $ranger));
 	fi;
 done
-
-echo -e '\a'
