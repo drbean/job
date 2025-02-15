@@ -22,7 +22,7 @@ else
 	exit 1
 fi
 
-echo "Block ${BLOCK[0]}: $(date)">> $HOME/job/$LAND/$AREA/done
+echo "Block ${BLOCK%?}: $(date)">> $HOME/job/$LAND/$AREA/done
 for i in ${BLOCK[@]} ; do
 	declare -i first last
 	first=$(< $HOME/job/$LAND/$AREA/next)
@@ -35,4 +35,5 @@ for i in ${BLOCK[@]} ; do
 	last=$(< $HOME/job/$LAND/$AREA/next)
 	echo $(date) $((++first))~$last $LAND $AREA $i |
 		tee -a $HOME/job/$LAND/$AREA/done
+	echo -e '\a'
 done
