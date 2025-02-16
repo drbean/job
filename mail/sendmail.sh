@@ -4,7 +4,7 @@
 
 # subject="Academic paper editing service";
 # body="edit_offer.txt"
-threshold=33
+threshold=32
 ranger=20
 
 declare -a subject_file body_file
