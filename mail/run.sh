@@ -3,12 +3,12 @@
 LAND_AREA=$1
 LAND=${LAND_AREA:0:2}
 AREA=${LAND_AREA#$LAND?}
-declare -a BLOCK
+declare -a BATCH
 
 echo >> $HOME/job/$LAND/$AREA/done
 if [[ $# -eq 2 ]]; then
-	BATCH=$2
-	BLOCK=( $( eval echo {${BATCH}0..${BATCH}9} ) )
+	PACKET=$2
+	BATCH=( $( eval echo {${PACKET}0..${PACKET}9} ) )
 elif [[ $# -eq 3 ]]; then
 	from=$2
 	to=$3
@@ -16,19 +16,19 @@ elif [[ $# -eq 3 ]]; then
 		echo "{$from..$to} backwards!" >&2
 		exit
 	fi
-	BLOCK=( $( eval echo {$from..$to} ) )
+	BATCH=( $( eval echo {$from..$to} ) )
 else
 	echo "$@: Too many/few args?" >&2
 	exit 1
 fi
 
-echo "Block ${BLOCK%?}: $(date)">> $HOME/job/$LAND/$AREA/done
-for i in ${BLOCK[@]} ; do
+echo "Batch ${BATCH%?}: $(date)">> $HOME/job/$LAND/$AREA/done
+for i in ${BATCH[@]} ; do
 	declare -i first last
 	first=$(< $HOME/job/$LAND/$AREA/next)
-	echo "$LAND/$AREA: $i of ${BLOCK[0]} ~ ${BLOCK[-1]}"
+	echo "$LAND/$AREA: $i of ${BATCH[0]} ~ ${BATCH[-1]}"
 	if ! [[ -f $HOME/job/$LAND/$AREA/$i ]] ; then
-		echo "No $i block. Continuing with block $((i+1))."
+		echo "No $i batch. Continuing with batch $((i+1))."
 		continue
 	fi
 	$HOME/job/$LAND/$AREA/sendmail.sh < $HOME/job/$LAND/$AREA/$i
