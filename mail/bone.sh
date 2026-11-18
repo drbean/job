@@ -3,8 +3,7 @@
 
 MEAT=./meat.yaml
 
-component=(greeting intro promotion strength point separator weakness pitch toeflic outro)
-strength=(language care understanding experience) 
+component=(greeting intro promotion point separator outro)
 point=(roman alpha num) 
 
 for c in ${component[*]} ; do
