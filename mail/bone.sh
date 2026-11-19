@@ -3,7 +3,8 @@
 
 MEAT=./meat.yaml
 
-component=(greeting intro promotion point separator outro)
+sentence=(greeting question authority verb determiner page summary outro)
+summary=(point separator item)
 point=(roman alpha num) 
 
 for c in ${component[*]} ; do
@@ -49,23 +50,21 @@ for c in ${component[*]} ; do
 	fi
 done
 
-cat <<OFFER
+cat <<REPORT
 $greeting!
 
-$intro.
+$question
 
-$promotion:
+$authorization
 
-$point1$separator $strength1,
-$point2$separator $strength2,
-$point3$separator $strength3,
-$point4$separator $strength4.
+$verb $determiner $page
 
-A weakness: $weakness.
+$summary
 
-$pitch.
-
-$toeflic.
+$point1$separator $item0,
+$point2$separator $item1,
+$point3$separator $item2,
+$point4$separator $item3.
 
 $outro!
-OFFER
+REPORT
